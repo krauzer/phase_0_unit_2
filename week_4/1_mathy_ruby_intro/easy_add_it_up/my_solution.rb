@@ -25,10 +25,9 @@ Output is number
 Sentence Maker Method: 
 Input is an array of strings
 Output is string formatted to a sentence
-	#SET variable, sentence, to an empty string
-	#CAPITALIZE first element in array.
+	#SET variable, sentence, to capitalized first letter in array.
 	#ADD period to last element in array. 
-	#ITERATE over array of strings and add each element to sentence with a space seperation
+	#ITERATE over array of strings from second element on and add each element to sentence with a space seperation
 	#RETURN sentence
 =end
 # 2. Initial Solution
@@ -51,13 +50,9 @@ def sentence_maker(array)
 	Input: Array of strings 
 	Autput: String formatted to resemble sentence
 =end
-	#SET variable, sentence, to an empty string
-	sentence = ""
-	#CAPITALIZE first element in array.
-	##ADD first element in array to sentence. 
-	#ADD period to last element in array. 
-	array[0].capitalize!
-	sentence += array[0]
+	#SET variable, sentence, to an capitalized first word in array
+	sentence = array[0].capitalize!
+	#ADD period to last element in array.
 	array[array.length-1] += "."
 	#ITERATE over array of strings from second element on and add each element to sentence with a space seperation
 	array[1, length-1].each{ |x| sentence += " #{x}" }
@@ -83,9 +78,9 @@ def sentence_maker(array)
 	Input: Array of strings 
 	Autput: String formatted to resemble sentence
 =end
-	sentence = array[0].capitalize! 
+	array[0].capitalize! 
 	array[array.length-1] += "."
-	array[1,array.length-1].each{ |x| sentence += " #{x}" }
+	sentence = array.join(" ")
 	return sentence
 end
 
@@ -105,7 +100,8 @@ every exercise.
 
 The "Test to solve" method was effective for me here. It's almost like reverse pseudocode. You have an 
 output you want to achieve, and work torwards it until it is achieved. My tests failed because I had 
-an extra space at the start of the sentence, so I thought how to solve that, and it helped in refactoring. 
+an extra space at the start of the sentence, so I thought how to solve that, and it helped in refactoring. I eventually
+realized I could use a join method, so that's what I did because it's clearer. Test ran in the same amount of time though. 
 	
 I enjoyed this challenge, and I enjoy coding to test via the console. I still need to learn more about testing and
 working the console effectively. 
