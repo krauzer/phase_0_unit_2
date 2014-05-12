@@ -19,9 +19,18 @@
 #DETERMINE middle value of argument array using division 
 #AVERAGE the two middle values if the argument array is of even length 
 #SET middle variable to middle value for odd arrays or averaged middle for even array 
+#RETURN middle
 
 
 # 2. Initial Solution
+
+def median(array)
+	middle = nil 
+	array.sort!
+	middle = array[array.length/2]
+	middle = (middle + array[(array.length/2)- 1])/2.0 if array.length % 2 == 0
+	middle
+end
 
 
 
