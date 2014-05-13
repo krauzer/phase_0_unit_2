@@ -16,13 +16,29 @@
 #DEFINE method, get_grade
 #SET variable, average, to sum of array elements divided by length of array
 #SET switch statement to convert average from a number to equivalent letter grade
-#RETURN average
+#RETURN from switch statement
 
 
 
 
 # 2. Initial Solution
-
+def get_grade(array)
+	average = array.reduce(:+)/array.length
+	case average
+		when 90...100
+			"A"
+		when 80..90
+			"B"
+		when 70..80
+			"C"
+		when 60..70
+			"D"
+		when 0..60
+			"F"
+		else
+			"ERROR"
+	end
+end
 
 
 
@@ -31,3 +47,4 @@
 
 
 # 4. Reflection 
+
