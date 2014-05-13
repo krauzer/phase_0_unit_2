@@ -25,15 +25,15 @@
 def get_grade(array)
 	average = array.reduce(:+)/array.length
 	case average
-		when 90...100
+		when 90..100
 			"A"
-		when 80..90
+		when 80...90
 			"B"
-		when 70..80
+		when 70...80
 			"C"
-		when 60..70
+		when 60...70
 			"D"
-		when 0..60
+		when 0...60
 			"F"
 		else
 			"ERROR"
