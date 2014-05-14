@@ -50,17 +50,19 @@ end
 
 # Person 4
 def my_array_deletion_method(source, thing_to_delete)
-  #Your code here!
+  source.delete_if {|x|  x.to_s.include?(thing_to_delete) }
 end
 
 def my_hash_deletion_method(source, thing_to_delete)
-  #Your code here!
+  source.delete_if {|key,value| thing_to_delete == key }
 end
 
+
 # Identify and describe the ruby method you implemented. 
-# 
-#
-#
+# It's a deletion method that takes a block and deletes from 
+# the block whatever element meeets the conditions 
+# of that block. Since input may not exactly match the element of the array
+# it's better than delete. 
 
 
 ################## DRIVER CODE ###################################
@@ -78,8 +80,23 @@ p my_array_deletion_method(i_want_pets, "a") == ["I", 4, "pets", "but", "I", "on
 p my_hash_deletion_method(my_family_pets_ages, "George") == {"Evi" => 8, "Hoobie" => 5, "Bogart" => 6, "Poly" => 6, "Annabelle" => 2, "Ditto" => 5}
 
 # Reflect!
-# 
-# 
-# 
-# 
-# 
+=begin 
+
+I watched a video on navigating through the ruby docs and it explained the notation of the metods, 
+which I hadn't really thought about. There are a couple options for deletions, but I chose the one
+that made most sense for the problem. The thing I learned was how to read the documentation 
+specification for the methods (inputs, outputs, syntax), and, I guess, how to describe these features. 
+
+I was having trouble with the drive code at first, but I realized it was working on objects that had 
+been modified by other methods, so I wrote my own driver code, and it passed. 
+
+Methods and testing are definitely sinking in more. I have to spend more time reading the documentation. 
+Because my part of this challenge was small, it wasn't tedious. 
+
+
+ =end
+
+
+
+
+
