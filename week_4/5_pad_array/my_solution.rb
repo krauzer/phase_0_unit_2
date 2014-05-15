@@ -20,27 +20,34 @@
 #Setup: 
 	#MODIFY Array class by defining two new public methods
 		#DEFINE method, pad, with parameter, size, and optional parameter, element defaulted to nil
-			#RETURN array (as self) if self.length is less than or equal to the input size
 			#DEFINE copy of array called clone_array using the clone method in self
+			#RETURN array (as self) if self.length is less than or equal to the input size
 			#DETERMINE how many elements need to be pushed into the clone by subtracting self.length from size
-			#PUSH element into clone 
+			#PUSH element into clone using times metod on push_num Integer
 			#RETURN clone implicitly 
 		#DEFINE method, pad!
+			#RETURN array (as self) if self.length is less than or equal to the input size
+			#DETERMINE how many elements need to be pushed into self by subtracting self.length from size
+			#PUSH element into self using times method on push_num Integer
+			#RETURN self
 
 
 # 2. Initial Solution
 
 class Array 
 	def pad(size, element=nil)
-		return self if self.length <= size
 		clone_array = self.clone
+		return clone_array if size <= self.length #important to return clone even if self matches
 		push_num = size - self.length
-		push_num.times{|x| clone_arry.push(element)}
+		push_num.times{|x| clone_array.push(element)}
 		clone_array
 	end
 
-	def pad!()
-
+	def pad!(size, element=nil)
+		return self if size <= self.length 
+		push_num = size - self.length 
+		push_num.times{|x| self.push(element)}
+		return self
 	end
 end 
 
