@@ -6,44 +6,49 @@ my_family_pets_ages = {"Evi" => 6, "Hoobie" => 3, "George" => 12, "Bogart" => 4,
 
 # Person 1's solution
 def my_array_finding_method(source, thing_to_find)
-  # Your code here!
+	list = []
+  source.each{|x| list << x if x.to_s.include? thing_to_find}
+  	list
 end
 
 def my_hash_finding_method(source, thing_to_find)
-  # Your code here!
+  names = []
+  source.each{|key, value| names << key if value == thing_to_find }
+  names 
 end
 
 # Identify and describe the ruby method you implemented. 
-# 
+# Include method tests to see if a value is included and returns a boolean
 #
 #
 
 # Person 2
 def my_array_modification_method(source, thing_to_modify)
-  # Your code here!
+  source.map!{|x| (x.is_a? Integer) ? x + thing_to_modify : x }
 end
 
 def my_hash_modification_method(source, thing_to_modify)
-  # Your code here!
+  source.each{|key, value| source[key]+= thing_to_modify}
 end
 
 # Identify and describe the ruby method you implemented. 
-# 
+# map method maps code onto each element of an enumerable 
 #
 #
 
 
 # Person 3
 def my_array_sorting_method(source)
-  # Your code here!
+  copy = source.map{|x| x.to_s}
+  copy.uniq.sort!
 end
 
 def my_hash_sorting_method(source)
-  # Your code here!
+  copy =  source.sort_by{|key, value| value }
 end
 
 # Identify and describe the ruby method you implemented. 
-# 
+# sort method sorts based on value 
 #
 #
 
@@ -94,7 +99,7 @@ Methods and testing are definitely sinking in more. I have to spend more time re
 Because my part of this challenge was small, it wasn't tedious. 
 
 
- =end
+=end
 
 
 
