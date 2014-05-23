@@ -65,7 +65,7 @@ class CreditCard
     @num.split("").each_with_index {|digit, index| 
       digit = digit.to_i
         if index % 2 == 0
-          sum += (digit*2 >= 10 ? digit*2 % 10 + 1 : digit*2) if index % 2 == 0
+          sum += (digit*2 >= 10 ? digit*2 % 10 + 1 : digit*2) 
         else
           sum += digit
         end
