@@ -61,6 +61,7 @@ end
 get_col(1) ==  ["r", "o", "c", "a"]
 
 
+
 #-------------------------------------------------------------------------------
 
 # Part 3: Write a class Boggle with methods initialize, create_word, get_row, and get_col.
@@ -159,3 +160,4 @@ class objects represent themselves and of how to read such objects.
 =end
   
   
+
