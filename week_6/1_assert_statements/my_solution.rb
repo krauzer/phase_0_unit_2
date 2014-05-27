@@ -76,5 +76,8 @@ didn't really go into how they work nor did it cover exceptions. Still, though, 
 how to work them into driver code. It was helpful to turn old code into new. 
 
 This challenge wasn't difficult. Working with blocs is enjoyable. 
+
+The problem I see is that a general assert method doesn't exactly combat or point out specific errors for different methods. As it 
+stands now, it's made for comparison failures. I will think about how to make things more specific. 
 	
 =end
